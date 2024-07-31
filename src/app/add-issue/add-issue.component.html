@@ -1,0 +1,19 @@
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
+    <div class="card shadow-sm p-4" style="width: 20rem;">
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4">Create Record</h2>
+        <form [formGroup]="addIssueForm">
+          <div class="mb-3">
+            <label for="student" class="form-label">Student mail</label>
+            <input type="text" id="student" formControlName="student" class="form-control" name="student" required>
+          </div>
+          <div class="mb-3">
+            <label for="book" class="form-label">Book Code</label>
+            <input type="book" id="book" formControlName="book" class="form-control"  name="book" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100" (click)="submitForm(addIssueForm?.value)">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

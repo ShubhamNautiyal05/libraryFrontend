@@ -1,0 +1,26 @@
+
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
+    <div class="card shadow-sm p-4" style="width: 20rem;">
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4">Add Book</h2>
+        <form [formGroup]="addBookForm">
+          <div class="mb-3">
+            <label for="username" class="form-label">Title</label>
+            <input type="text" id="username" formControlName="title" class="form-control" name="username" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Author</label>
+            <input type="text" id="email" formControlName="author" class="form-control"  name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="rollNo" class="form-label">Book Code</label>
+            <input type="text" id="rollNo" formControlName="isbn" class="form-control"  name="rollNo" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100" (click)="submitForm(addBookForm?.value)">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  

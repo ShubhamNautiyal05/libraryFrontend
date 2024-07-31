@@ -1,0 +1,29 @@
+
+
+
+<div class="d-flex align-items-center mb-3 mt-3" >
+  <h2 class="me-auto">Student List</h2>
+  <button type="button" class="btn btn-outline-success ms-auto" style="height: 40px;margin-right: 10px;" routerLink="/add-student">Add Student</button>
+</div>
+<div class="mt-5">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Roll Number</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students;let i=index">
+        <td>{{ i+1}}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.rollNumber }}</td>
+        <td><button class="btn btn-outline-danger" (click)="deleteStudent(student.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

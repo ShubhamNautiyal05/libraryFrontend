@@ -1,0 +1,37 @@
+<div class="d-flex align-items-center mb-3 mt-3" >
+  <h2 class="me-auto">Book Student List</h2>
+ 
+  <button type="button" class="btn btn-outline-success ms-auto" style="height: 40px;margin-right: 10px;" routerLink="/add-issue">Create Record</button>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Book Code</th>
+      <th>Book Name</th>
+      <th>Student Name</th>
+      <th>Issue Date</th>
+      <th>Return Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let issue of issues, let i=index">
+      <td>{{ i+1 }}</td>
+      <td>{{ issue.book.isbn }}</td>
+      <td>{{ issue.book.title }}</td>
+      <td>{{ issue.student.name }}</td>
+      <td>{{ issue.issueDate }}</td>
+      <td>{{ issue.returnDate }}</td>
+      <td>
+        <button
+          (click)="returnBook(issue.id)"
+          [disabled]="issue.returnDate !== null"
+          [ngClass]="issue.returnDate ? 'btn btn-success' : 'btn btn-danger'"
+        >
+          {{ issue.returnDate ? 'Book Returned' : 'Return Book' }}
+        </button>
+      <!-- <td><button (click)="deleteBook(book.id)">Delete</button></td> -->
+    </tr>
+  </tbody>
+</table>
