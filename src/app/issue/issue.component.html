@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center mb-3 mt-3" >
-  <h2 class="me-auto">Book Student List</h2>
+  <h2 class="me-auto">Record List</h2>
  
   <button type="button" class="btn btn-outline-success ms-auto" style="height: 40px;margin-right: 10px;" routerLink="/add-issue">Create Record</button>
 </div>
@@ -28,10 +28,17 @@
           (click)="returnBook(issue.id)"
           [disabled]="issue.returnDate !== null"
           [ngClass]="issue.returnDate ? 'btn btn-success' : 'btn btn-danger'"
+          class="me-2" 
         >
           {{ issue.returnDate ? 'Book Returned' : 'Return Book' }}
         </button>
-      <!-- <td><button (click)="deleteBook(book.id)">Delete</button></td> -->
+        <button
+        class="btn btn-outline-danger ms-2"
+        (click)="deleteBook(issue.id)"
+        [disabled]="!issue.returnDate"
+      >
+        Delete
+      </button>
     </tr>
   </tbody>
 </table>

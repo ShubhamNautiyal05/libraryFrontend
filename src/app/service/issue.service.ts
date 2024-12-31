@@ -21,4 +21,8 @@ export class IssueService {
   returnBook(id: number): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}/return`, {});
   }
+
+  deleteRecord(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`,{});
+  }
 }
